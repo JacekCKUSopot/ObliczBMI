@@ -40,9 +40,10 @@ public class ObliczBMI extends JFrame {
                 try {
                     double waga = Double.parseDouble(txtWaga.getText());
                     double wzrost = Double.parseDouble(txtWzrost.getText());
-                    double MBI = waga / (wzrost * wzrost);
+                    double wzrostCm = wzrost / 100.0;
+                    double bmi = waga / (wzrostCm * wzrostCm);
                     // Wyświetlamy wynik z dokładnością do 2 miejsc po przecinku
-                    lblWynik.setText(String.format("Twoje BMI wynosi: %.2f", MBI));
+                    lblWynik.setText(String.format("Twoje BMI wynosi: %.2f", bmi));
                 } catch (NumberFormatException ex) {
                     // Obsługa błędu – użytkownik wpisał nieprawidłową wartość
                     lblWynik.setText("Błąd! Podaj liczbę.");
